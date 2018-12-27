@@ -19,6 +19,7 @@ router.post("/burgers/create", function (req, res) {
         burger_name: req.body.burger_name
     })
         .then(function (dbBurger) {
+            console.log(dbBurger);
             res.redirect("/");
         });
 });
