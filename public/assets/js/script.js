@@ -1,8 +1,7 @@
 $(document).ready(function () {
   M.updateTextFields();
   $(".devour").on("click", function () {
-    alert("Hello");
-    var burger_id = $(this).children(".burger_id").val();
+    var burger_id = $(this).val();
     console.log(burger_id);
     $.ajax({
       method: "PUT",
