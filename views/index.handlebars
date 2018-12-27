@@ -5,30 +5,32 @@
     <br>
     <br>
     <div class="row">
-        <div class="col s6 text-center">
+        <div class="col s8 text-center">
             <div class="row">
                 {{#each burger}} {{#unless this.devoured}}
-                <div class="col s8 text-center">
-                    <p> {{this.id}}.-  {{this.burger_name}}</p>
+                <div class="col s7 text-center">
+                    <p> {{this.id}}.- {{this.burger_name}}</p>
                 </div>
                 <div class="col s4 text-center">
-                    <button class="btn devour burger_id" value="{{this.id}}"> Devour!</button>
+                    <button class="btn devour burger_id" value="{{this.id}}"> Devour
+                    <i class="material-icons">local_dining</i>
+                    </button>
                 </div>
                 {{/unless}} {{/each}}
             </div>
         </div>
-        <div class="col s6 text-center">
+        <div class="col s4 text-center">
             {{#each burger}} {{#if this.devoured}}
             <div class="card-panel grey lighten-5 z-depth-1">
                 <span class="black-text">
-                    {{this.id}} {{this.burger_name}}
+                    {{this.id}}.-   {{this.burger_name}} 
                 </span>
             </div>
             {{/if}} {{/each}}
         </div>
     </div>
     <br>
-    
+
     <div class="input-field col s4">
         <form action="/burgers/create" method="POST">
             <input id="burger_name" type="text" class="validate burger_name" name="burger_name">
